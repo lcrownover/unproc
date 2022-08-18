@@ -3,8 +3,21 @@ package main
 import (
 	"flag"
 	"fmt"
+	ps "github.com/mitchellh/go-ps"
 	"os"
 )
+
+func getProcessCountforUser(user string) int {
+	fmt.Println("getting process count for user", user)
+	allProcesses, err := ps.Processes()
+	if err != nil {
+		fmt.Println(fmt.Errorf("failed to get proceses: %v", err))
+	}
+	for p := range allProcesses {
+		fmt.Println(p)
+	}
+	return 1
+}
 
 func runServer(host string, port int) {
 	fmt.Printf("listening at %s:%v\n", host, port)
@@ -15,6 +28,7 @@ func runServer(host string, port int) {
 func runClient(host string, port int, user string) {
 	fmt.Printf("connecting to %s:%v\n", host, port)
 	fmt.Printf("querying user %s\n", user)
+	getProcessCountforUser(user)
 }
 
 func main() {
