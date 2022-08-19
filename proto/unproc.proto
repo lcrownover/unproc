@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package unproc;
+
+option go_package = "unproc/internal/proto";
+
+
+service Unproc {
+  rpc Retrieve (User) returns (UserReply) {}
+}
+
+message User {
+  string Name = 1;
+}
+
+message UserReply {
+  string Name = 1;
+  int32 ProcessCount = 2;
+}
