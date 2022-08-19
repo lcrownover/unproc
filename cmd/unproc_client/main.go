@@ -45,6 +45,6 @@ func main() {
 		log.Fatalf("failed to query user: %v", err)
 	}
 
-	fmt.Println(user.ProcessCount)
+	fmt.Printf("%d", user.ProcessCount)
 
 }
