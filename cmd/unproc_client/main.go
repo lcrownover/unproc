@@ -4,7 +4,6 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	//"github.com/lcrownover/unproc/internal/client"
 	"log"
 	"os"
 	"time"
@@ -46,6 +45,6 @@ func main() {
 		log.Fatalf("failed to query user: %v", err)
 	}
 
-	log.Println(user.ProcessCount)
+	fmt.Println(user.ProcessCount)
 
 }
