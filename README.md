@@ -1,4 +1,4 @@
-# unproc
+# unproc (abandoned)
 
 `unproc` is a client/server tool used to query user process counts via gRPC.
 
